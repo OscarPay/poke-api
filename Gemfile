@@ -64,3 +64,7 @@ group :development do
   # gem "spring"
 end
 
+
+gem "faraday", "~> 2.5"
+
+gem "rack-cors", "~> 1.1"
