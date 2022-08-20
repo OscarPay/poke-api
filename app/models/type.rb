@@ -1,6 +1,6 @@
-class Pokemon < ApplicationRecord
+class Type < ApplicationRecord
   has_many :pokemon_types
-  has_many :types, through: :pokemon_types
-
+  has_many :pokemon, through: :pokemon_types
+  
   validates :name, presence: true, uniqueness: true
 end

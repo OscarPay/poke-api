@@ -11,29 +11,38 @@ class PokemonCreator
   end
 
   def call
-    Pokemon.insert_all(pokemons) if pokemons.any?
+    pokemons
   end
 
   private
 
   def results
-    results = PokemonFetcher.call(limit, offset)
+    @results ||= PokemonFetcher.call(limit, offset)
   end
 
   def pokemons
-    results.map do |result|
+    results.each do |result|
       id = result['url'].split('/').last.to_i
-
       next if Pokemon.exists?(id)
 
       details = PokemonDetailsFetcher.call(id)
 
-      {
+      data = {
         id: id,
         name: result['name'],
-        image: details['sprites']['front_default'],
-        types: details['types'].map { |type| type['type']['name'] }.join(', ')
+        image: details['sprites']['front_default']
       }
+
+      pokemon = Pokemon.new(data)
+
+      types = details['types'].map { |type| type['type']['name'] }
+      
+      types.each do |type|
+       type = Type.find_by(name: type.downcase)
+        pokemon.types << type
+      end
+
+      pokemon.save!
     end
   end
 
