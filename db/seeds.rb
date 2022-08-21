@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 
 types = [
   { name: 'normal', color: '#A8A878' },
@@ -53,4 +54,3 @@ Type.insert_all(types)
 # puts "Fetching eighth generation Pokemon..."
 # PokemonCreator.call(96, 809)
 # puts "Eighth generation Pokemon fetched!"
-
