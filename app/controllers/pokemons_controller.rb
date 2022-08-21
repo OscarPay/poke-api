@@ -5,7 +5,7 @@ class PokemonsController < ApplicationController
 
   # GET /pokemons or /pokemons.json
   def index
-    @pokemons = Pokemon.all
+    @pokemons = Pokemon.includes(:types).all
   end
 
   # GET /pokemons/1 or /pokemons/1.json
