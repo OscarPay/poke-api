@@ -1,11 +1,18 @@
 # frozen_string_literal: true
 
 class PokemonsController < ApplicationController
+  include Pagy::Backend
+
   before_action :set_pokemon, only: %i[show edit update destroy]
 
   # GET /pokemons or /pokemons.json
   def index
-    @pokemons = Pokemon.includes(:types).all
+    pagy, records = pagy(Pokemon.includes(:types).all)
+
+    respond_to do |format|
+      format.html { render :index }
+      format.json { render json: PokemonsPresenter.call(records, pagy) }
+    end
   end
 
   # GET /pokemons/1 or /pokemons/1.json
