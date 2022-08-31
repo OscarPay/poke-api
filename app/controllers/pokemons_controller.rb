@@ -7,7 +7,7 @@ class PokemonsController < ApplicationController
 
   # GET /pokemons or /pokemons.json
   def index
-    pagy, records = pagy(Pokemon.includes(:types).all)
+    pagy, records = pagy(Pokemon.includes(:types).all, items: pagination_params[:items], page: pagination_params[:page])
 
     respond_to do |format|
       format.html { render :index }
@@ -74,5 +74,9 @@ class PokemonsController < ApplicationController
   # Only allow a list of trusted parameters through.
   def pokemon_params
     params.require(:pokemon).permit(:name, :image, :types)
+  end
+
+  def pagination_params
+    params.permit(:items, :page)
   end
 end
