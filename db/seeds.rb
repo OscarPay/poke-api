@@ -23,34 +23,34 @@ types = [
 
 Type.insert_all(types)
 
-puts "Fetching first generation Pokemon..."
+puts 'Fetching first generation Pokemon...'
 PokemonCreator.call
-puts "First generation Pokemon fetched!"
+puts 'First generation Pokemon fetched!'
 
-puts "Fetching second generation Pokemon..."
+puts 'Fetching second generation Pokemon...'
 PokemonCreator.call(100, 151)
-puts "Second generation Pokemon fetched!"
+puts 'Second generation Pokemon fetched!'
 
-puts "Fetching third generation Pokemon..."
+puts 'Fetching third generation Pokemon...'
 PokemonCreator.call(135, 251)
-puts "Third generation Pokemon fetched!"
+puts 'Third generation Pokemon fetched!'
 
-puts "Fetching fourth generation Pokemon..."
+puts 'Fetching fourth generation Pokemon...'
 PokemonCreator.call(107, 386)
-puts "Fourth generation Pokemon fetched!"
+puts 'Fourth generation Pokemon fetched!'
 
-puts "Fetching fifth generation Pokemon..."
+puts 'Fetching fifth generation Pokemon...'
 PokemonCreator.call(156, 493)
-puts "Fifth generation Pokemon fetched!"
+puts 'Fifth generation Pokemon fetched!'
 
-puts "Fetching sixth generation Pokemon..."
+puts 'Fetching sixth generation Pokemon...'
 PokemonCreator.call(72, 649)
-puts "Sixth generation Pokemon fetched!"
+puts 'Sixth generation Pokemon fetched!'
 
-puts "Fetching seventh generation Pokemon..."
+puts 'Fetching seventh generation Pokemon...'
 PokemonCreator.call(88, 721)
-puts "Seventh generation Pokemon fetched!"
+puts 'Seventh generation Pokemon fetched!'
 
-puts "Fetching eighth generation Pokemon..."
+puts 'Fetching eighth generation Pokemon...'
 PokemonCreator.call(96, 809)
-puts "Eighth generation Pokemon fetched!"
+puts 'Eighth generation Pokemon fetched!'

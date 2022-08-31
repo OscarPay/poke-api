@@ -6,6 +6,7 @@ Layout/LineLength:
     - 'bin/bundle'
 
 Metrics/MethodLength:
+  Max: 15
   Exclude:
     - 'bin/bundle'
 
@@ -16,6 +17,7 @@ Metrics/CyclomaticComplexity:
 Metrics/PerceivedComplexity:
   Exclude:
     - 'bin/bundle'
+    - 'config/environments/development'
 
-Metrics/MethodLength:
-  Max: 15
+Metrics/BlockLength:
+  Max: 30

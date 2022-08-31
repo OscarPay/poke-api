@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PokemonsPresenter
   attr_reader :pagy, :pokemons
 
@@ -9,14 +11,14 @@ class PokemonsPresenter
     @pagy = pagy
     @pokemons = pokemons
   end
-  
+
   def call
     {
       page: pagy.page,
       items: pagy.items,
       pages: pagy.pages,
       total: pagy.count,
-      data: data
+      data:
     }
   end
 
@@ -32,5 +34,4 @@ class PokemonsPresenter
       }
     end
   end
-
 end

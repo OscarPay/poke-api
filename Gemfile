@@ -72,6 +72,6 @@ gem 'rack-cors', '~> 1.1'
 
 gem 'rubocop', '~> 1.35'
 
-gem "bullet", "~> 7.0"
+gem 'bullet', '~> 7.0'
 
-gem "pagy", "~> 5.10"
+gem 'pagy', '~> 5.10'
